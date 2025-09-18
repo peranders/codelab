@@ -15,7 +15,7 @@ Create a bucket for the staging environment needed for deployment.
 
 Create two .env file like below for and put them in the `adk_to_agent_engine/` folder. 
 
-Name them .env-us and .env-europe.
+Name them .env-us and .env-eu.
 
 
 
