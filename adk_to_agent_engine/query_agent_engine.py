@@ -13,7 +13,7 @@ load_dotenv()
 project_id = os.environ["GOOGLE_CLOUD_PROJECT"]
 location = os.environ["GOOGLE_CLOUD_LOCATION"]
 app_name = os.environ.get("APP_NAME")
-bucket_name = os.environ["STAGING_BUCKET"]
+bucket_name = os.environ.get("STAGING_BUCKET")
 
 print(f"Using project_id: {project_id}, location: {location}, app_name: {app_name}, bucket_name: {bucket_name}")
 

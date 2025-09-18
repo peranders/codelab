@@ -13,9 +13,13 @@ pip install google-adk
 
 Create a bucket for the staging environment needed for deployment.
 
-Create a .env file like below for both folders 
+Create two .env file like below for and put them in the `adk_to_agent_engine/` folder. 
 
-`adk_to_agent_engine-us-central1` :
+Name them .env-us and .env-europe.
+
+
+
+`.env_us` 
 ```
 GOOGLE_GENAI_USE_VERTEXAI=TRUE
 GOOGLE_CLOUD_PROJECT=<YOUR PROJECT>
@@ -25,7 +29,7 @@ STAGING_BUCKET=gs://<YOUR BUCKET>
 APP_NAME=myagent-us-central1
 ```
 
-`adk_to_agent_engine-europe-west1`:
+`.env_eu`:
 ```
 GOOGLE_GENAI_USE_VERTEXAI=TRUE
 GOOGLE_CLOUD_PROJECT=<YOUR PROJECT>
@@ -35,13 +39,14 @@ STAGING_BUCKET=gs://<YOUR BUCKET>
 APP_NAME=myagent-europe-west1
 ```
 
-Fill in with project_id and your bucket name
+Fill in with **project_id** and your **bucket name**
 
-cd to the respective folders.
 
-To deploy: ```deploy.sh``` 
+`cd adk_to_agent_engine/`
 
-To run: ```run.sh```
+To deploy: ```deploy_us.sh``` or ```deploy_eu.sh``` 
+
+To run: ```run_us.sh``` or ```run_eu .sh```
 
 
 
