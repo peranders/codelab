@@ -1,4 +1,4 @@
-source myagent/.env
-python myagent/query_agent_engine.py
+source .env
+python query_agent_engine.py
 
 

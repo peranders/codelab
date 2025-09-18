@@ -20,7 +20,7 @@ print(f"Using project_id: {project_id}, location: {location}, app_name: {app_nam
 
 # Initialize Google Cloud Logging with the correct project ID
 cloud_logging_client = google.cloud.logging.Client(project=project_id)
-handler = CloudLoggingHandler(cloud_logging_client, name="transcript-summarizer")
+handler = CloudLoggingHandler(cloud_logging_client, name=app_name)
 logging.getLogger().setLevel(logging.INFO)
 logging.getLogger().addHandler(handler)
 
@@ -45,20 +45,12 @@ print(f"Using remote app: {remote_app.display_name}")
 # Get a session for the remote app
 remote_session = remote_app.create_session(user_id="u_456")
 
-transcript_to_summarize = """
-    Virtual Agent: Hi, I am a vehicle sales agent. How can I help you?
-    User: I'd like to buy a boat.
-    Virtual Agent: A big boat, or a small boat?
-    User: How much boat will $50,000 get me?
-    Virtual Agent: That will get you a very nice boat.
-    User: Let's do it!
-"""
 my_message = "Give me a receipe for a pizza."
 # Run the agent with this hard-coded input
 events = remote_app.stream_query(
     user_id="u_456",
     session_id=remote_session["id"],
-    message="how to make a pizza?",
+    message=my_message,
 )
 
 print("Agent response:")
