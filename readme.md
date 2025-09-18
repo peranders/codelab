@@ -1,5 +1,17 @@
-Create a bucket for the staging environment needed for deployment.
+Create and activate a python virtual env:
+```
+python -m venv .venv-agent
+source .venv-agent/bin/activate
+```
 
+Install google adk:
+```
+pip install google-adk
+```
+
+
+
+Create a bucket for the staging environment needed for deployment.
 
 Create a .env file like below for both folders 
 
